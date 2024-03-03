@@ -1,0 +1,340 @@
+@import "variables.scss";
+@import "mixins.scss";
+.home {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2em;
+  max-width: 80%;
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  p {
+    margin-top: 20px;
+  }
+  span {
+    color: red;
+  }
+}
+.fase {
+  margin: 0 auto;
+  padding: 20px;
+
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+  .fase-lijst-container {
+    max-width: 500px;
+    margin: 0 auto;
+    label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+      padding: 10px;
+      background: $bg-clr;
+      border-radius: 25px;
+    }
+    .fase-lijst {
+      list-style-type: none;
+
+      input[type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+      }
+
+      input[type="checkbox"] ~ ul {
+        height: 0;
+        transform: scaleY(0);
+      }
+
+      input[type="checkbox"]:checked ~ ul {
+        height: 100%;
+        transform-origin: top;
+        transition: transform 0.2s ease-out;
+        transform: scaleY(1);
+      }
+
+      input[type="checkbox"]:checked + label {
+        background: $bg-clr-hvr;
+        border-radius: 25px;
+        font-size: 1.2em;
+      }
+      .sub-fase-lijst {
+        list-style: none;
+        padding-left: 20px;
+      }
+      .task-done {
+        color: #ff0000;
+        text-shadow: 1px 1px 10px red;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.logoff-btn {
+  @include log-btn;
+}
+.login-body {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .login-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border: 1px solid $font-clr;
+    color: $font-clr;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    #login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+    }
+    .login-item {
+      padding: 5px 10px;
+      border-radius: 15px;
+      color: #000000;
+      background-color: $bg-clr;
+      &:focus {
+        outline: 2px solid $font-clr;
+        background-color: $bg-clr-hvr;
+      }
+    }
+    .login-btn-container {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      margin: 5px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+
+      @include log-btn;
+    }
+  }
+}
+
+@media only screen and (max-width: 402px) {
+  nav {
+    background-color: $bg-clr;
+    margin: 10px 0;
+    padding: 10px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    ul {
+      text-decoration: none;
+      list-style: none;
+      li {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover {
+          text-shadow: 1px 1px 10px $font-clr;
+        }
+      }
+      .split {
+        float: right;
+        position: relative;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 403px) {
+  nav {
+    background-color: $bg-clr;
+    margin: 10px 0;
+    padding: 10px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    ul {
+      text-decoration: none;
+      list-style: none;
+      li {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover {
+          text-shadow: 1px 1px 10px $font-clr;
+        }
+      }
+      .split {
+        float: right;
+        position: relative;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  nav {
+    background-color: $bg-clr;
+    margin: 10px 0;
+    padding: 10px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
+    ul {
+      text-decoration: none;
+      list-style: none;
+      li {
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover {
+          text-shadow: 1px 1px 10px $font-clr;
+        }
+      }
+      .split {
+        float: right;
+        position: relative;
+      }
+    }
+  }
+}
+.user-link {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  letter-spacing: 2px;
+}
+
+.message-user {
+  font-size: 2em;
+  text-align: center;
+  margin: 25px auto;
+  color: #ff0000;
+  background-color: rgba(255, 255, 0);
+  font-weight: 900;
+}
+.no-auth {
+  margin: 0 auto;
+  text-align: center;
+}
+.new-event-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 75%;
+  border: 2px solid #00ff00;
+
+  .form-create-new-event {
+    margin: 0 auto;
+    min-height: 50vh;
+    width: 80%;
+
+    input {
+      margin: 15px;
+      padding: 5px 5px 5px 10px;
+      color: #000000;
+      border-radius: 15px;
+    }
+    #event-short {
+      width: 30vw;
+    }
+    textarea {
+      width: 45vw;
+      min-height: 15vh;
+    }
+    .create-event-btn {
+      @include event-btn;
+    }
+  }
+}
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid #00ff00;
+  border-radius: 15px;
+  width: 70vw;
+  min-height: 65vh;
+  margin: 0 auto;
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    min-height: 50vh;
+
+    input {
+      color: #000000;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      min-height: 7vh;
+      justify-content: center;
+
+      .contact-btn {
+        background-color: $bg-clr;
+        box-shadow: 0 4px $font-clr;
+        padding: 5px;
+        border-radius: 15px;
+        max-height: 40px;
+        margin: 10px;
+        width: 100px;
+        &:hover {
+          background-color: $bg-clr-hvr;
+          border: 1px solid $font-clr;
+        }
+        &:active {
+          transform: translateY(4px);
+          box-shadow: 0 1px $font-clr;
+        }
+      }
+    }
+
+    .contact-form-item {
+      width: 20vw;
+      margin: 10px;
+      border-radius: 15px;
+      padding: 10px;
+    }
+    .text-message {
+      width: 40vw;
+      min-height: 35vh;
+      padding: 10px;
+      border-radius: 15px;
+      margin: 10px;
+      color: #000000;
+    }
+  }
+}
