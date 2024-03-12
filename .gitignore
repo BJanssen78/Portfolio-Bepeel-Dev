@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 *.workspace
 *.code-workspace
+*.*workspace
+
+todo-list.js
+prijzen

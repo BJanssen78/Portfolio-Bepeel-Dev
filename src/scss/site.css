@@ -1,369 +1,73 @@
-.home {
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.2em;
-  max-width: 80%;
-}
-.home h1 {
-  font-size: 2em;
-  font-weight: bold;
-}
-.home p {
-  margin-top: 20px;
-}
-.home span {
-  color: red;
+#root {
+  width: 100%;
 }
 
-.fase {
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.header-title {
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
-}
-.fase h1 {
-  font-size: 2em;
-  font-weight: bold;
+  background-color: red;
   text-align: center;
+  color: blue;
 }
-.fase p {
-  text-align: center;
+
+.dark-light-btn {
+  size: 1.5em;
 }
-.fase .fase-lijst-container {
-  max-width: 500px;
-  margin: 0 auto;
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
-.fase .fase-lijst-container label {
-  display: block;
-  margin: 10px 0;
-  cursor: pointer;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.35);
-  border-radius: 25px;
-}
-.fase .fase-lijst-container .fase-lijst {
-  list-style-type: none;
-}
-.fase .fase-lijst-container .fase-lijst input[type=checkbox] {
-  position: absolute;
-  left: -9999px;
-}
-.fase .fase-lijst-container .fase-lijst input[type=checkbox] ~ ul {
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
   height: 0;
-  transform: scaleY(0);
-}
-.fase .fase-lijst-container .fase-lijst input[type=checkbox]:checked ~ ul {
-  height: 100%;
-  transform-origin: top;
-  transition: transform 0.2s ease-out;
-  transform: scaleY(1);
-}
-.fase .fase-lijst-container .fase-lijst input[type=checkbox]:checked + label {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 25px;
-  font-size: 1.2em;
-}
-.fase .fase-lijst-container .fase-lijst .sub-fase-lijst {
-  list-style: none;
-  padding-left: 20px;
-}
-.fase .fase-lijst-container .fase-lijst .task-done {
-  color: #ff0000;
-  text-shadow: 1px 1px 10px red;
-  font-size: 1.2em;
-  font-weight: bold;
 }
 
-.logoff-btn .login-btn {
-  background-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px #00ff00;
-  padding: 5px;
-  border-radius: 15px;
-  width: 100px;
-  max-height: 40px;
-}
-.logoff-btn .login-btn:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid #00ff00;
-}
-.logoff-btn .login-btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px #00ff00;
+/* The slider - the moving part of the switch */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
 }
 
-.login-body {
-  width: 100%;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.login-body .login-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  width: 350px;
-  border: 1px solid #00ff00;
-  color: #00ff00;
-  padding: 10px;
-  padding-bottom: 20px;
-  margin: 0 auto;
-}
-.login-body .login-container #login-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-}
-.login-body .login-container .login-item {
-  padding: 5px 10px;
-  border-radius: 15px;
-  color: #000000;
-  background-color: rgba(255, 255, 255, 0.35);
-}
-.login-body .login-container .login-item:focus {
-  outline: 2px solid #00ff00;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-.login-body .login-container .login-btn-container {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  margin: 5px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-}
-.login-body .login-container .login-btn-container .login-btn {
-  background-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px #00ff00;
-  padding: 5px;
-  border-radius: 15px;
-  width: 100px;
-  max-height: 40px;
-}
-.login-body .login-container .login-btn-container .login-btn:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid #00ff00;
-}
-.login-body .login-container .login-btn-container .login-btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px #00ff00;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
 }
 
-@media only screen and (max-width: 402px) {
-  nav {
-    background-color: rgba(255, 255, 255, 0.35);
-    margin: 10px 0;
-    padding: 10px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 1;
-  }
-  nav ul {
-    text-decoration: none;
-    list-style: none;
-  }
-  nav ul li {
-    display: inline-block;
-    padding: 0 10px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  nav ul li:hover {
-    text-shadow: 1px 1px 10px #00ff00;
-  }
-  nav ul .split {
-    float: right;
-    position: relative;
-  }
-}
-@media only screen and (min-width: 403px) {
-  nav {
-    background-color: rgba(255, 255, 255, 0.35);
-    margin: 10px 0;
-    padding: 10px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 1;
-  }
-  nav ul {
-    text-decoration: none;
-    list-style: none;
-  }
-  nav ul li {
-    display: inline-block;
-    padding: 0 10px;
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  nav ul li:hover {
-    text-shadow: 1px 1px 10px #00ff00;
-  }
-  nav ul .split {
-    float: right;
-    position: relative;
-  }
-}
-@media only screen and (min-width: 520px) {
-  nav {
-    background-color: rgba(255, 255, 255, 0.35);
-    margin: 10px 0;
-    padding: 10px;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 1;
-  }
-  nav ul {
-    text-decoration: none;
-    list-style: none;
-  }
-  nav ul li {
-    display: inline-block;
-    padding: 0 10px;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  nav ul li:hover {
-    text-shadow: 1px 1px 10px #00ff00;
-  }
-  nav ul .split {
-    float: right;
-    position: relative;
-  }
-}
-.user-link {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  letter-spacing: 2px;
+input:checked + .slider {
+  background-color: #2196f3;
 }
 
-.message-user {
-  font-size: 2em;
-  text-align: center;
-  margin: 25px auto;
-  color: #ff0000;
-  background-color: rgb(255, 255, 0);
-  font-weight: 900;
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
 }
 
-.no-auth {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.new-event-form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 75%;
-  border: 2px solid #00ff00;
-}
-.new-event-form-container .form-create-new-event {
-  margin: 0 auto;
-  min-height: 50vh;
-  width: 80%;
-}
-.new-event-form-container .form-create-new-event input {
-  margin: 15px;
-  padding: 5px 5px 5px 10px;
-  color: #000000;
-  border-radius: 15px;
-}
-.new-event-form-container .form-create-new-event #event-short {
-  width: 30vw;
-}
-.new-event-form-container .form-create-new-event textarea {
-  width: 45vw;
-  min-height: 15vh;
-}
-.new-event-form-container .form-create-new-event .create-event-btn {
-  background-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px #00ff00;
-  padding: 5px;
-  border-radius: 15px;
-  width: 100px;
-  max-height: 40px;
-  margin: 10px;
-}
-.new-event-form-container .form-create-new-event .create-event-btn:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid #00ff00;
-}
-.new-event-form-container .form-create-new-event .create-event-btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px #00ff00;
-}
-
-.contact-form-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  border: 1px solid #00ff00;
-  border-radius: 15px;
-  width: 70vw;
-  min-height: 65vh;
-  margin: 0 auto;
-}
-.contact-form-container .contact-form {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  min-height: 50vh;
-}
-.contact-form-container .contact-form input {
-  color: #000000;
-}
-.contact-form-container .contact-form .btn-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 7vh;
-  justify-content: center;
-}
-.contact-form-container .contact-form .btn-container .contact-btn {
-  background-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 4px #00ff00;
-  padding: 5px;
-  border-radius: 15px;
-  max-height: 40px;
-  margin: 10px;
-  width: 100px;
-}
-.contact-form-container .contact-form .btn-container .contact-btn:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid #00ff00;
-}
-.contact-form-container .contact-form .btn-container .contact-btn:active {
-  transform: translateY(4px);
-  box-shadow: 0 1px #00ff00;
-}
-.contact-form-container .contact-form .contact-form-item {
-  width: 20vw;
-  margin: 10px;
-  border-radius: 15px;
-  padding: 10px;
-}
-.contact-form-container .contact-form .text-message {
-  width: 40vw;
-  min-height: 35vh;
-  padding: 10px;
-  border-radius: 15px;
-  margin: 10px;
-  color: #000000;
+input:checked + .slider:before {
+  transform: translateX(26px);
 }/*# sourceMappingURL=site.css.map */
