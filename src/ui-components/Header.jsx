@@ -1,8 +1,14 @@
+import React from "react";
+import { Navigation, SiteLogo } from "./UiIndex.js";
+
 export const Header = () => {
   return (
-    <>
-      <p className="header-title">Bepeel Development</p>
-    </>
+    <React.Fragment>
+      <div className="site-header-container">
+        <SiteLogo />
+        <Navigation />
+      </div>
+    </React.Fragment>
   );
 };
 

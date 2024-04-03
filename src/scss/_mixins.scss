@@ -1,35 +1,22 @@
-@mixin log-btn {
-  .login-btn {
-    background-color: $bg-clr;
-    box-shadow: 0 4px $font-clr;
-    padding: 5px;
-    border-radius: 15px;
-    width: 100px;
-    max-height: 40px;
-    &:hover {
-      background-color: $bg-clr-hvr;
-      border: 1px solid $font-clr;
-    }
-    &:active {
-      transform: translateY(4px);
-      box-shadow: 0 1px $font-clr;
-    }
+@mixin site-logo {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  font-family: "stencilSTD";
+  font-weight: 900;
+  text-transform: uppercase;
+
+  .special-char {
+    font-size: $font-size-spec-char;
+    color: $base-clr-light;
   }
-}
-@mixin event-btn {
-  background-color: $bg-clr;
-  box-shadow: 0 4px $font-clr;
-  padding: 5px;
-  border-radius: 15px;
-  width: 100px;
-  max-height: 40px;
-  margin: 10px;
-  &:hover {
-    background-color: $bg-clr-hvr;
-    border: 1px solid $font-clr;
+  .element-text {
+    color: $base-clr-light;
   }
-  &:active {
-    transform: translateY(4px);
-    box-shadow: 0 1px $font-clr;
+  .web-element {
+    color: $base-clr-light;
+    text-stroke: $base-stroke-size $base-clr-dark;
+    -webkit-text-stroke: $base-stroke-size $base-clr-dark;
   }
 }

@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 // import { AuthProvider } from "./functions/AuthContext.jsx";
 import ErrorBoundary from "./ui-components/ErrorBoundary.jsx";
-import { Home } from "./pages/pagesIndex.js";
+import { About, Home } from "./pages/pagesIndex.js";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Home /> },
+      { path: "/about", element: <About /> },
       // { path: "/contact", element: <Contact /> },
     ],
   },
