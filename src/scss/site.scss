@@ -21,6 +21,7 @@
 .site-header-container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 15px;
 }
 
 .site-logo {
@@ -28,12 +29,10 @@
   width: auto;
   height: auto;
   padding: 0 10px;
-  background-color: black;
   @include site-logo;
 }
 
 nav {
-  background-color: lightblue;
   font-size: 1.5em;
   display: flex;
   flex-wrap: nowrap;
@@ -46,18 +45,47 @@ nav {
   height: auto;
   font-weight: 600;
 
-  ul {
+  ul.navigation-list {
     text-decoration: none;
     list-style: none;
 
     li {
       padding: 10px 15px;
       display: inline-block;
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: white;
+          background-color: black;
+        }
+      }
+      a.visited {
+        text-decoration: 4px underline;
+      }
     }
   }
 }
 
-.home {
-  position: relative;
-  top: 100px;
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: $font-size;
+
+  .sub-title {
+    font-size: $sub-title;
+    font-family: "stencilSTD";
+    padding: 10px;
+  }
+  .content-text-1 {
+    padding: $content-text-paragraph;
+    background-color: black;
+    color: white;
+  }
+  .content-text-2 {
+    background-color: white;
+    color: black;
+    padding: $content-text-paragraph;
+  }
 }
