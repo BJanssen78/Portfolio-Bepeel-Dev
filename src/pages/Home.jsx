@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../ui-components/Button";
 
 export const Home = () => {
   return (
@@ -25,6 +26,7 @@ export const Home = () => {
           perspiciatis ratione at debitis minus culpa, saepe dignissimos quam,
           in, earum pariatur? Cupiditate magni sit numquam.
         </p>
+        <Button type="reset" name="button" text="Click me" action="form" />
       </div>
     </React.Fragment>
   );
