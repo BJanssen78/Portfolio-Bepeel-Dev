@@ -12,7 +12,35 @@ $btn-width: 120px;
   height: 100%;
   min-height: 100vh;
   font-size: $font-size;
+  color: var(--font-clr);
+  background-color: var(--bg-clr);
+  font-family: "calibri";
+
+  .content-container div {
+    padding: 25px;
+    margin: 0 15px;
+  }
+
+  .content-container > div:nth-child(odd) {
+    background-color: var(--bg-clr-reverse);
+    color: var(--font-clr-reverse);
+    border-radius: 25px;
+  }
+  .content-container > div:last-child {
+    margin-bottom: 30px;
+    // adding some whitespace at the bottom
+  }
+  .content-container a {
+    color: lightcoral;
+    text-decoration: none;
+
+    i {
+      font-size: 0.7em;
+      padding: 0 5px;
+    }
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -49,16 +77,15 @@ $btn-width: 120px;
       flex: 1 1 auto;
       box-sizing: border-box;
       text-decoration: none;
-      // padding: 10px;
 
       a {
         position: relative;
         text-decoration: none;
-        // color: black;
+        color: var(--nav-font-clr);
         overflow: hidden;
         padding: 0 10px;
         white-space: nowrap;
-        // text-overflow: ellipsis;
+        z-index: 1;
 
         &:after {
           content: "";
@@ -69,12 +96,12 @@ $btn-width: 120px;
           left: 0;
           bottom: 0;
 
-          background-color: black;
+          background-color: var(--nav-bg-clr-after);
           transition: width 350ms ease-in-out;
         }
 
         &:hover {
-          color: white;
+          color: var(--nav-clr-hover);
 
           &:after {
             width: 100%;
@@ -87,7 +114,8 @@ $btn-width: 120px;
 }
 
 .btn {
-  background-color: black;
+  background-color: var(--btn-bg-clr);
+  cursor: pointer;
   display: flex;
   width: $btn-width;
   height: calc($btn-width / 4);
@@ -96,16 +124,21 @@ $btn-width: 120px;
   align-content: center;
   padding: 5px 10px;
   border-radius: 25px;
-  color: white;
+  color: var(--btn-font-clr);
   font-weight: 700;
   margin: 10px 15px;
-  box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
-  text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
+  box-shadow: var(--btn-box-shadow);
+  text-shadow: var(--btn-text-shadow);
   transition: transform 100ms ease-in-out;
 
   &:hover {
-    background-color: white;
-    color: black;
+    background-color: var(--btn-bg-clr-hover);
+    color: var(--btn-font-clr-hover);
     transform: translateY(4px);
   }
+}
+
+.subtitle {
+  font-size: $sub-title;
+  font-weight: 700;
 }

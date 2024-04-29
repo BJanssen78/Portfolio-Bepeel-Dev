@@ -1,6 +1,44 @@
 // dark and light options
-$font-clr-light: rgba(0, 0, 0, 1);
-$font-clr-dark: rgba(255, 255, 255, 1);
+
+// light mode
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-clr: rgba(0, 0, 0, 1);
+    --bg-clr: rgba(255, 255, 255, 1);
+    --bg-clr-reverse: rgba(0, 0, 0, 1);
+    --font-clr-reverse: rgba(255, 255, 255, 1);
+    --nav-bg-clr: rgba(255, 255, 255, 1);
+    --nav-font-clr: rgba(0, 0, 0, 1);
+    --nav-bg-clr-after: rgba(0, 0, 0, 1);
+    --nav-clr-hover: rgba(255, 255, 255, 1);
+    --btn-bg-clr: rgba(0, 0, 0, 1);
+    --btn-font-clr: rgba(255, 255, 255, 1);
+    --btn-bg-clr-hover: rgba(255, 255, 255, 1);
+    --btn-font-clr-hover: rgba(0, 0, 0, 1);
+    --btn-box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
+    --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
+  }
+}
+
+// dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-clr: rgba(255, 255, 255, 1);
+    --bg-clr: rgba(0, 0, 0, 1);
+    --bg-clr-reverse: rgba(255, 255, 255, 1);
+    --font-clr-reverse: rgba(0, 0, 0, 1);
+    --nav-bg-clr: rgba(0, 0, 0, 1);
+    --nav-font-clr: rgba(255, 255, 255, 1);
+    --nav-bg-clr-after: rgba(255, 255, 255, 1);
+    --nav-clr-hover: rgba(0, 0, 0, 1);
+    --btn-bg-clr: rgba(255, 255, 255, 1);
+    --btn-font-clr: rgba(0, 0, 0, 1);
+    --btn-bg-clr-hover: rgba(0, 0, 0, 1);
+    --btn-font-clr-hover: rgba(255, 255, 255, 1);
+    --btn-box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
+    --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
+  }
+}
 
 // site logo options
 $base-stroke-size: 2px;
@@ -10,9 +48,6 @@ $font-size-logo: 1.6em;
 $font-size-spec-char: 1.5em;
 
 // font options
-$sub-title: 1.5em;
+$sub-title: 1.3em;
 $font-size: 1.2em;
 $font-size-header: 1.5em;
-
-//content options
-$content-text-paragraph: 15px 30px;
