@@ -18,6 +18,8 @@
     --btn-font-clr-hover: rgba(0, 0, 0, 1);
     --btn-box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
     --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
+    --tag-text-clr: rgba(0, 0, 0, 1);
+    --tag-bg-clr: rgba(255, 255, 255, 1);
   }
 }
 @media (prefers-color-scheme: dark) {
@@ -175,4 +177,17 @@
 .subtitle {
   font-size: 1.3em;
   font-weight: 700;
+}
+
+.skill-tag {
+  background-color: var(--tag-bg-clr);
+  color: var(--tag-text-clr);
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.skill-tag > i {
+  padding: 0 5px;
 }/*# sourceMappingURL=site.css.map */
