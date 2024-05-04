@@ -1,4 +1,46 @@
-export const skills = JSON.parse(`{
+const personData = JSON.parse(`{
+  "education": [
+    {
+      "id": 1,
+      "institution": "Winc Academy",
+      "education": "Full Stack Web Development",
+      "bulletpoints": ["frontend", "backend", "databases", "React", "Node.js", "Express.js", "Prisma", "SQL", "HTML", "CSS", "SCSS", "JavaScript", "Python", "Git", "Github", "ORM"],
+      "level": "HBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2023",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 2,
+      "institution": "NHA",
+      "education": "Teamleader logistics",
+      "bulletpoints": ["teamleader", "logistics", "planning", "optimization", "financial", "communication","safety", "quality", "prioritizing"],
+      "level": "MBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2019",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 3,
+      "institution": "NHA",
+      "education": "BHV",
+      "bulletpoints": ["first aid", "fire safety", "communication", "evacuation", "safety"],
+      "level": "",
+      "degree": "certificate",
+      "yearOfCertificate": "2012",
+      "renewal": ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"]
+    },
+    {
+      "id": 4,
+      "institution": "NTI",
+      "education": "Webdesign",
+      "bulletpoints": ["HTML", "CSS", "User experience", "marketing",  "CMS", "responsive design"],
+      "level": "MBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2012",
+      "renewal": ["indefinite"]
+    }
+  ],
   "skills": [
     {
       "id": 1,
@@ -107,3 +149,5 @@ export const skills = JSON.parse(`{
     }
   ]
 }`);
+
+export default personData;

@@ -1,5 +1,6 @@
 import React from "react";
 import Skills from "../ui-components/Skills";
+import Education from "../ui-components/Education";
 
 export const About = () => {
   return (
@@ -71,6 +72,10 @@ export const About = () => {
           <h2 className="subtitle">Skills</h2>
           <Skills />
         </div>
+        <div id="about-education">
+          <h2 className="subtitle">Educations</h2>
+          <Education />
+        </div>{" "}
       </div>{" "}
       {/* end of content-container */}
     </React.Fragment>

@@ -19,6 +19,8 @@
     --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
     --tag-text-clr: rgba(0, 0, 0, 1);
     --tag-bg-clr: rgba(255, 255, 255, 1);
+    --tag-text-clr-reverse: rgba(255, 255, 255, 1);
+    --tag-bg-clr-reverse: rgba(0, 0, 0, 1);
   }
 }
 
@@ -39,6 +41,10 @@
     --btn-font-clr-hover: rgba(255, 255, 255, 1);
     --btn-box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
     --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
+    --tag-text-clr: rgba(255, 255, 255, 1);
+    --tag-bg-clr: rgba(0, 0, 0, 1);
+    --tag-text-clr-reverse: rgba(0, 0, 0, 1);
+    --tag-bg-clr-reverse: rgba(255, 255, 255, 1);
   }
 }
 
