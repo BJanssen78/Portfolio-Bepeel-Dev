@@ -15,6 +15,7 @@ $btn-width: 120px;
   color: var(--font-clr);
   background-color: var(--bg-clr);
   font-family: "calibri";
+  scroll-behavior: smooth;
 
   .content-container div {
     padding: 25px;
@@ -167,4 +168,60 @@ $btn-width: 120px;
   font-size: 0.8em;
   font-weight: 700;
   padding-left: 5px;
+}
+
+.about-navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+
+  .about-nav-list {
+    display: flex;
+    justify-items: center;
+    gap: 25px;
+  }
+
+  .about-nav-item {
+    display: inline-block;
+    padding: 10px;
+    justify-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: var(--bg-clr);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--bg-clr-reverse);
+      color: var(--font-clr-reverse);
+    }
+    &:hover a {
+      background-color: var(--bg-clr-reverse);
+      color: var(--font-clr-reverse);
+    }
+
+    &:focus {
+      outline: none; /* Remove default focus outline */
+    }
+  }
+
+  .about-nav-item > a {
+    color: var(--font-clr);
+    text-decoration: none;
+  }
+
+  .about-nav-item.active {
+    background-color: var(--bg-clr-reverse);
+    color: var(--font-clr-reverse);
+  }
+  .about-nav-item.active a {
+    background-color: var(--bg-clr-reverse);
+    color: var(--font-clr-reverse);
+    text-decoration: underline;
+  }
 }
