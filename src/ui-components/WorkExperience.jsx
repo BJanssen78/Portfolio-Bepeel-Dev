@@ -2,25 +2,35 @@ import React from "react";
 import personData from "../database/personData.js";
 import { Tag } from "@chakra-ui/react";
 
-export const Education = () => {
-  console.log(personData.education);
+export const WorkExperience = () => {
+  const workExperienceArray = Object.values(personData.workExperience);
+
   return (
     <React.Fragment>
-      {personData.education.map((item) => (
-        <div key={item.id} className="education-container">
-          <h3>
-            {item.education}
-            <span className="education-year">{item.yearOfCertificate}</span>
-          </h3>
+      {workExperienceArray
+        .sort((a, b) => b.startYear - a.startYear)
+        .map((item) => (
+          <div key={item.id} className="education-container">
+            <h3>
+              {item.companyName}
+              <br />
+              From :{" "}
+              <span className="education-year">
+                {item.startYear} {item.startMonth} -{" "}
+                {item.endYear ? item.endYear : "Present"}{" "}
+                {item.endMonth ? item.endMonth : ""}
+              </span>{" "}
+            </h3>
 
-          {item.bulletpoints.map((point, index) => (
-            <Tag key={index} className="skill-tag-reverse">
-              {point}
-            </Tag>
-          ))}
-        </div>
-      ))}
+            {item.bulletpoints.map((point, index) => (
+              <Tag key={index} className="skill-tag">
+                {point}
+              </Tag>
+            ))}
+          </div>
+        ))}
     </React.Fragment>
   );
 };
-export default Education;
+
+export default WorkExperience;

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Skills, Education, WorkExperience } from "../ui-components/UiIndex.js";
+import {
+  Skills,
+  Education,
+  WorkExperience,
+  DownloadResume,
+} from "../ui-components/UiIndex.js";
 import { Storyline } from "./pagesIndex.js";
 
 export const About = () => {
@@ -32,13 +37,19 @@ export const About = () => {
               className={`about-nav-item ${activeTab === "education" ? "active" : ""}`}
               onClick={() => handleTabClick("education")}
             >
-              <a href="#about-downside">Education</a>
+              <a href="#about-education">Education</a>
             </li>
             <li
               className={`about-nav-item ${activeTab === "skills" ? "active" : ""}`}
               onClick={() => handleTabClick("skills")}
             >
-              <a href="#about-change">Skills</a>
+              <a href="#about-skills">Skills</a>
+            </li>
+            <li
+              className={`about-nav-item ${activeTab === "download" ? "active" : ""}`}
+              onClick={() => handleTabClick("download")}
+            >
+              <a href="#about-download">Download Resume</a>
             </li>
           </ul>
         </nav>
@@ -48,6 +59,7 @@ export const About = () => {
         {activeTab === "experience" && <WorkExperience />}
         {activeTab === "skills" && <Skills />}
         {activeTab === "education" && <Education />}
+        {activeTab === "download" && <DownloadResume />}
       </div>
     </React.Fragment>
   );

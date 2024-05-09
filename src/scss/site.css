@@ -65,6 +65,14 @@
   color: var(--font-clr-reverse);
   border-radius: 25px;
 }
+#root .content-container > div:nth-child(odd) span.skill-tag {
+  background-color: var(--tag-bg-clr);
+  color: var(--tag-text-clr);
+}
+#root .content-container > div:nth-child(even) span.skill-tag {
+  background-color: var(--tag-bg-clr-reverse);
+  color: var(--tag-text-clr-reverse);
+}
 #root .content-container > div:last-child {
   margin-bottom: 30px;
 }
@@ -187,8 +195,6 @@
 }
 
 .skill-tag {
-  background-color: var(--tag-bg-clr);
-  color: var(--tag-text-clr);
   border-radius: 15px;
   padding: 5px 10px;
   margin: 5px;
@@ -197,16 +203,6 @@
 }
 .skill-tag > i {
   padding: 0 5px;
-}
-
-.skill-tag-reverse {
-  background-color: var(--tag-bg-clr-reverse);
-  color: var(--tag-text-clr-reverse);
-  border-radius: 15px;
-  padding: 5px 10px;
-  margin: 5px;
-  font-size: 0.8em;
-  font-weight: 700;
 }
 
 .education-year {
@@ -263,4 +259,10 @@
   background-color: var(--bg-clr-reverse);
   color: var(--font-clr-reverse);
   text-decoration: underline;
+}
+
+.download-form-container form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
 }/*# sourceMappingURL=site.css.map */

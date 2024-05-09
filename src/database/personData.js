@@ -1,4 +1,127 @@
 const personData = JSON.parse(`{
+  "workExperience": [
+    {
+      "id": 1,
+      "companyName": "MSD Animal Health",
+      "position": "Logistic employee",
+      "startYear": "2022",
+      "endYear": "",
+      "startMonth": "feb",
+      "endMonth": "",
+      "bulletpoints": ["Orderpicking", "Assembly", "Transport", "Loading", "Unloading"],
+      "comments": "Permanent assignment, due to education to Full Stack Web Development"
+    },
+    {
+    "id": 2,
+    "companyName": "Unemployed",
+    "position": "Looking for a job",
+    "startYear": "2021",
+    "endYear": "2022",
+    "startMonth": "nov",
+    "endMonth": "feb",
+    "bulletpoints": ["Jobhunting"],
+    "comments": ""
+    },
+    {
+      "id": 3,
+      "companyName": "Bakkerij Bouwman",
+      "position": "Teamleader production (flex)",
+      "startYear": "2021",
+      "endYear": "2021",
+      "startMonth": "nov",
+      "endMonth": "nov",
+      "bulletpoints": ["Production",  "Personel Planning", "Process optimization"],
+      "comments": "Temporary assignment, no match"
+    },
+    {
+      "id": 4,
+      "companyName": "Arvato Bertelsmann",
+      "position": "Warehouse Supervisor Inbound & Replenishment",
+      "startYear": "2020",
+      "endYear": "2021",
+      "startMonth": "nov",
+      "endMonth": "okt",
+      "bulletpoints": ["Inbound", "Replenishment", "Safety", "Planning long term", "Process optimization", "Personel Planning", "Communication", "Training", "Coaching", "KPI's", "SOP's", "5S", "Lean", "SAP", "Visio", "Sharepoint", "Stock control", "Root cause analysis", "Continuous improvement"],	
+      "comments": "Contract assignment, due to chip shortage contract not extended"
+    },
+    {
+      "id": 5,
+      "companyName": "Arvato Bertelsmann",
+      "position": "Warehouse Supervisor Returns",
+      "startYear": "2021",
+      "endYear": "2021",
+      "startMonth": "jun",
+      "endMonth": "sept",
+      "bulletpoints": ["Returns", "Process optimization", "Personel Planning", "Training", "Coaching", "KPI's", "5S", "Lean", "SAP", "Visio", "Sharepoint", "Root cause analysis", "Continuous improvement"],
+      "comments": "Project assignment, due to chip shortage contract not extended"
+    },
+    {
+      "id": 6,
+      "companyName": "Kuehne + Nagel",
+      "position": "Foreman Inbound",
+      "startYear": "2020",
+      "endYear": "2020",
+      "startMonth": "jul",
+      "endMonth": "okt",
+      "bulletpoints": ["Inbound", "process optimization", "personel planning", "KPI's", "Stock control", "continuous improvement", "safety"],
+      "comments": "Permanent assignment"
+    },
+    {
+      "id": 7,
+      "companyName": "Kuehne + Nagel",
+      "position": "Foreman Outbound",
+      "startYear": "2019",
+      "endYear": "2020",
+      "startMonth": "okt",
+      "endMonth": "jun",
+      "bulletpoints": ["Outbound", "process optimization", "personel planning", "KPI's", "Stock control", "continuous improvement", "safety"],
+      "comments": "Permanent assignment"
+    },
+    {
+      "id": 8,
+      "companyName": "Grand Duet BV (Alldough, Bart's Retail BV)",
+      "position": "Assistant supervisor",
+      "startYear": "2007",
+      "endYear": "2019",
+      "startMonth": "nov",
+      "endMonth": "sept",
+      "bulletpoints": ["Inbound", "Outbound", "Stock control", "Orderpicking", "Assembly", "WMS", "Technical support automated systems"],
+      "comments": "Permanent assignment"
+    },
+    {
+      "id": 9,
+      "companyName": "Vion Food Group (Dumeco, Bovec, NCB)",
+      "position": "Deputy foreman expedition",
+      "startYear": "1996",
+      "endYear": "2007",
+      "startMonth": "feb",
+      "endMonth": "nov",
+      "bulletpoints": ["Secretary personel association", "Inbound", "Outbound", "Editor company news", "Orderpicking", "Deputy head Facility"],
+      "comments": "Permanent assignment"
+    },
+    {
+      "id": 10,
+      "companyName": "Media Expresse",
+      "position": "delivery boy",
+      "startYear": "1993",
+      "endYear": "1996",
+      "startMonth": "jan",
+      "endMonth": "dec", 
+      "bulletpoints": ["delivering megazines"],
+      "comments": "Student job"
+    },
+    {
+      "id": 11,
+      "companyName": "Unknow",
+      "position": "delivery boy",
+      "startYear": "1992",
+      "endYear": "1993",
+      "startMonth": "jan",
+      "endMonth": "dec",
+      "bulletpoints": ["delivering newspapers"],
+      "comments": "Student job"
+    }
+  ],
   "education": [
     {
       "id": 1,
@@ -22,7 +145,7 @@ const personData = JSON.parse(`{
     },
     {
       "id": 3,
-      "institution": "NHA",
+      "institution": "NIBHV",
       "education": "BHV",
       "bulletpoints": ["first aid", "fire safety", "communication", "evacuation", "safety"],
       "level": "",
@@ -38,6 +161,86 @@ const personData = JSON.parse(`{
       "level": "MBO",
       "degree": "certificate",
       "yearOfCertificate": "2012",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 5,
+      "institution": "Various",
+      "education": "Driver certificate",
+      "bulletpoints": ["Lifttruck", "Reachtruck", "Combitruck (manlift)", "EPT"],
+      "level": "None",
+      "degree": "certificate",
+      "yearOfCertificate": "2002",
+      "renewal": ["2007","2008", "2012", "2017", "2021","2022"]
+    },
+    {
+      "id": 6,
+      "institution": "Boston",
+      "education": "Informatica",
+      "bulletpoints": ["Word", "Excel", "Windows", "Outlook", "Internet"],
+      "level": "MBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2003",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 7,
+      "institution": "EVC",
+      "education": "SVO",
+      "bulletpoints": ["food safety", "production assistance"],
+      "level": "MBO",
+      "degree": "Diploma",
+      "yearOfCertificate": "2003",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 8,
+      "institution": "Precon",
+      "education": "Communication",
+      "bulletpoints": [],
+      "level": "MBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2003",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 9,
+      "institution": "Helicon Nijmegen",
+      "education": "Plants and Animal care",
+      "bulletpoints": ["animal behavior analysis", "animal care"],
+      "level": "VMBO",
+      "degree": "Diploma",
+      "yearOfCertificate": "1995",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 10,
+      "institution": "Helicon Cuijk",
+      "education": "Live stock care",
+      "bulletpoints": [],
+      "level": "MAVO",
+      "degree": "unfinished",
+      "yearOfCertificate": "1996",
+      "renewal": ["None"]
+    },
+    {
+      "id": 11,
+      "institution": "VVL Lexmond",
+      "education": "Vak Vervoer en Logistiek",
+      "bulletpoints": ["logistics", "transport", "special movements", "communication", "safety", "technical knowledge"],
+      "level": "MBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2002",
+      "renewal": ["indefinite"]
+    },
+    {
+      "id": 12,
+      "institution": "ECOlab",
+      "education": "Chemical cleaning and safety",
+      "bulletpoints": [],
+      "level": "MBO",
+      "degree": "certificate",
+      "yearOfCertificate": "2007",
       "renewal": ["indefinite"]
     }
   ],
