@@ -52,6 +52,30 @@ $btn-width: 120px;
   }
 }
 
+input[type="checkbox"] {
+  appearance: none;
+  background-color: var(--checkbox-bg);
+  color: var(--checkbox-check);
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 1px;
+  left: 1px;
+  background-color: var(--checkbox-check);
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked:before {
+  visibility: visible;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -229,7 +253,16 @@ $btn-width: 120px;
 .download-form-container {
   form {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 300px);
     gap: 15px;
+    justify-content: center;
+    justify-items: start;
+  }
+  .resume-selection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: flex-start;
+    margin: 0;
+    padding: 0;
   }
 }

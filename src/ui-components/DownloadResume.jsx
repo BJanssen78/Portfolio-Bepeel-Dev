@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 
 export const DownloadResume = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [storyline, setStoryline] = useState(false);
+  const [workExperience, setWorkExperience] = useState(false);
+  const [education, setEducation] = useState(false);
+  const [skills, setSkills] = useState(false);
+
   return (
     <React.Fragment>
       <div>
@@ -29,6 +38,19 @@ export const DownloadResume = () => {
           <input id="phone" type="tel" />
           <label htmlFor="companyname">Your Company Name:</label>
           <input id="companyname" type="text" />
+          <p>Select the items that you want/need</p>
+          <section className="resume-selection">
+            <label htmlFor="storyline">Storyline:</label>
+            <input type="checkbox" id="storyline" />
+            <label htmlFor="workexperience" style={{ whiteSpace: "nowrap" }}>
+              Work Experience:
+            </label>
+            <input type="checkbox" id="workexperience" />
+            <label htmlFor="education">Education:</label>
+            <input type="checkbox" id="education" />
+            <label htmlFor="skills">Skills:</label>
+            <input type="checkbox" id="skills" />
+          </section>
           <Button type="submit" name="button" text="Download" action="#" />
         </form>
       </div>
