@@ -10,9 +10,7 @@ export const SiteLogo = () => {
           <span className="special-char">&gt;</span>
         </h1>
         <h1 className="web-element">
-          <span className="web-text">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WEB
-          </span>
+          <span className="web-text">WEB</span>
         </h1>
         <h1 className="web-element">
           <span className="special-char">&lt;/</span>

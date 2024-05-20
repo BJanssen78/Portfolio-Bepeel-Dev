@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const Navigation = () => {
   return (
     <React.Fragment>
-      <nav>
+      <nav className="site-navigation">
         <ul className="navigation-list">
           <li>
             <Link to="/">Home</Link>

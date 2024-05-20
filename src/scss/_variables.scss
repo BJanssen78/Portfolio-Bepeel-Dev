@@ -1,65 +1,38 @@
-// dark and light options
+@font-face {
+  font-family: "stencilSTD";
+  src: url("./fonts/StencilStd.otf");
+}
 
-// light mode
+//font options
+$font-size: 20px;
+$font-standard: "calibri";
+$font-special: "stencilSTD";
+
+//color options based on 60%, 30%, 10%
+$color-white: rgba(255, 255, 255, 0.753);
+$color-black: rgba(0, 0, 0, 0.8);
+$color-green: rgba(0, 255, 0, 0.8);
+
+//header options, screen width = 100vw
+$site-logo-width: 34vw;
+$site-nav-width: calc(100vw - #{$site-logo-width} - 100px);
+
 @media (prefers-color-scheme: light) {
   :root {
-    --font-clr: rgba(0, 0, 0, 1);
-    --bg-clr: rgba(255, 255, 255, 1);
-    --bg-clr-reverse: rgba(0, 0, 0, 1);
-    --font-clr-reverse: rgba(255, 255, 255, 1);
-    --nav-bg-clr: rgba(255, 255, 255, 1);
-    --nav-font-clr: rgba(0, 0, 0, 1);
-    --nav-bg-clr-after: rgba(0, 0, 0, 1);
-    --nav-clr-hover: rgba(255, 255, 255, 1);
-    --btn-bg-clr: rgba(0, 0, 0, 1);
-    --btn-font-clr: rgba(255, 255, 255, 1);
-    --btn-bg-clr-hover: rgba(255, 255, 255, 1);
-    --btn-font-clr-hover: rgba(0, 0, 0, 1);
-    --btn-box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
-    --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
-    --tag-text-clr: rgba(0, 0, 0, 1);
-    --tag-bg-clr: rgba(255, 255, 255, 1);
-    --tag-text-clr-reverse: rgba(255, 255, 255, 1);
-    --tag-bg-clr-reverse: rgba(0, 0, 0, 1);
-    --checkbox-bg: black;
-    --checkbox-check: white;
+    --font-clr: #{$color-black};
+    --bg-clr: #{$color-white};
+    --bg-clr-reverse: #{$color-black};
+    --font-clr-reverse: #{$color-white};
+    --element-clr: #{$color-green};
   }
 }
 
-// dark mode
 @media (prefers-color-scheme: dark) {
   :root {
-    --font-clr: rgba(255, 255, 255, 1);
-    --bg-clr: rgba(0, 0, 0, 1);
-    --bg-clr-reverse: rgba(255, 255, 255, 1);
-    --font-clr-reverse: rgba(0, 0, 0, 1);
-    --nav-bg-clr: rgba(0, 0, 0, 1);
-    --nav-font-clr: rgba(255, 255, 255, 1);
-    --nav-bg-clr-after: rgba(255, 255, 255, 1);
-    --nav-clr-hover: rgba(0, 0, 0, 1);
-    --btn-bg-clr: rgba(255, 255, 255, 1);
-    --btn-font-clr: rgba(0, 0, 0, 1);
-    --btn-bg-clr-hover: rgba(0, 0, 0, 1);
-    --btn-font-clr-hover: rgba(255, 255, 255, 1);
-    --btn-box-shadow: 4px 4px 7px rgba(192, 192, 192, 0.9);
-    --btn-text-shadow: 2px 2px 4px rgba(192, 192, 192, 0.9);
-    --tag-text-clr: rgba(255, 255, 255, 1);
-    --tag-bg-clr: rgba(0, 0, 0, 1);
-    --tag-text-clr-reverse: rgba(0, 0, 0, 1);
-    --tag-bg-clr-reverse: rgba(255, 255, 255, 1);
-    --checkbox-bg: white;
-    --checkbox-check: black;
+    --font-clr: #{$color-white};
+    --bg-clr: #{$color-black};
+    --bg-clr-reverse: #{$color-white};
+    --font-clr-reverse: #{$color-black};
+    --element-clr: #{$color-green};
   }
 }
-
-// site logo options
-$base-stroke-size: 2px;
-$base-clr-light: rgba(255, 255, 255, 1);
-$base-clr-dark: rgba(0, 0, 0, 1);
-$font-size-logo: 1.6em;
-$font-size-spec-char: 1.5em;
-
-// font options
-$sub-title: 1.3em;
-$font-size: 1.2em;
-$font-size-header: 1.5em;
