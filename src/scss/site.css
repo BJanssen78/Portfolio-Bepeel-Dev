@@ -40,7 +40,6 @@ body {
 
 .header {
   width: 100%;
-  margin: 10px;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -55,6 +54,7 @@ body {
   font-family: "stencilSTD";
   font-weight: 900;
   text-transform: uppercase;
+  margin: 10px;
 }
 .site-logo h1:nth-child(2) {
   color: var(--element-clr);
@@ -62,13 +62,12 @@ body {
 .site-logo .special-char {
   color: var(--element-clr);
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.9px) {
   .site-logo {
     flex-direction: row;
     justify-content: space-evenly;
     margin: 10px 0;
     gap: 10px;
-    width: 100%;
   }
 }
 @media screen and (max-width: 320px) {
@@ -86,7 +85,7 @@ body {
     font-size: 3rem;
   }
 }
-@media screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 767.9px) {
   .site-logo {
     font-size: 3.5rem;
   }
@@ -97,6 +96,7 @@ body {
     font-size: 4rem;
     align-items: flex-start;
     width: 34vw;
+    max-width: 255px;
     margin: 10px;
   }
   .site-logo h1:nth-child(odd) {
@@ -109,17 +109,58 @@ body {
 
 .site-navigation {
   font-family: "stencilSTD";
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
-.site-navigation a {
-  text-decoration: none;
+.site-navigation .navigation-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 25px;
 }
-@media screen and (max-width: 767px) {
-  .site-navigation .navigation-list {
-    list-style: none;
-  }
+.site-navigation .navigation-list .navigation-link {
+  padding: 2.5px 12.5px;
+  border-radius: 25px;
+  color: var(--font-clr);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+}
+.site-navigation .navigation-list .navigation-link:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--bg-clr-reverse);
+  transition: height 550ms ease-in-out, color 550ms ease-in-out;
+}
+.site-navigation .navigation-list .navigation-link:hover {
+  color: var(--element-clr);
+}
+.site-navigation .navigation-list .navigation-link:hover:after {
+  height: 10em;
+  border-radius: 15px;
 }
 @media screen and (min-width: 768px) {
-  .site-navigation {
-    width: calc(100vw - 34vw - 100px);
+  .site-navigation .navigation-list {
+    height: 100%;
+    align-items: center;
+    font-size: 3rem;
   }
+  .site-navigation .navigation-list .navigation-item {
+    box-sizing: border-box;
+  }
+}
+.site-navigation .navigation-link {
+  text-decoration: none;
 }/*# sourceMappingURL=site.css.map */

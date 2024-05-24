@@ -6,17 +6,25 @@ export const Navigation = () => {
     <React.Fragment>
       <nav className="site-navigation">
         <ul className="navigation-list">
-          <li>
-            <Link to="/">Home</Link>
+          <li className="navigation-item">
+            <Link className="navigation-link" to="/">
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/about/">About me</Link>
+          <li className="navigation-item">
+            <Link className="navigation-link" to="/about/">
+              About me
+            </Link>
           </li>
-          <li>
-            <Link to="/projects/">projects</Link>
+          <li className="navigation-item">
+            <Link className="navigation-link" to="/projects/">
+              projects
+            </Link>
           </li>
-          <li>
-            <Link to="/contact/">Contact</Link>
+          <li className="navigation-item">
+            <Link className="navigation-link" to="/contact/">
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>

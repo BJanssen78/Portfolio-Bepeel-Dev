@@ -15,7 +15,7 @@ $color-green: rgba(0, 255, 0, 0.8);
 
 //header options, screen width = 100vw
 $site-logo-width: 34vw;
-$site-nav-width: calc(100vw - #{$site-logo-width} - 100px);
+$site-nav-width: calc(100% - #{$site-logo-width});
 
 @media (prefers-color-scheme: light) {
   :root {
