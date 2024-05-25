@@ -83,7 +83,7 @@ body {
 }
 
 .site-navigation {
-  //base information for site navigation
+  // Base information for site navigation
 
   font-family: $font-special;
   width: 100%;
@@ -102,10 +102,12 @@ body {
 
     .navigation-item {
       border-radius: 25px;
+      position: relative;
     }
 
     .navigation-link {
-      padding: 2.5px 12.5px;
+      padding: 0 12.5px;
+      text-decoration: none;
       border-radius: 25px;
       color: var(--font-clr);
       text-align: center;
@@ -114,6 +116,7 @@ body {
       white-space: nowrap;
       overflow: hidden;
       z-index: 1;
+      transition: color 550ms ease-in-out;
 
       &:after {
         content: "";
@@ -129,9 +132,6 @@ body {
           height 550ms ease-in-out,
           background-color 550ms ease-in-out;
       }
-      //FIXME find corners and round them,
-      color: var(--element-clr);
-      transition: color 550ms ease-in-out 600ms; // delay added here
 
       &:hover {
         color: var(--element-clr);
@@ -148,18 +148,105 @@ body {
       align-items: center;
       font-size: 3rem;
       .navigation-item {
-        // padding: 20px;
         box-sizing: border-box;
       }
     }
   }
 
-  .navigation-link {
+  .navigation-item.active > .navigation-link {
+    color: var(--element-clr);
+
+    &:after {
+      height: 10em;
+      border-radius: 25px;
+    }
+  }
+}
+
+.about-navigation {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+
+  .about-nav-list {
+    display: flex;
+    justify-items: center;
+    gap: 25px;
+  }
+
+  .about-nav-item {
+    display: inline-block;
+    padding: 10px;
+    justify-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: var(--bg-clr);
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: var(--bg-clr-reverse);
+      color: var(--font-clr-reverse);
+    }
+    &:hover a {
+      color: var(--font-clr-reverse);
+    }
+
+    &:focus {
+      outline: none; /* Remove default focus outline */
+    }
+  }
+
+  .about-nav-item > a {
+    color: var(--font-clr);
     text-decoration: none;
   }
-  // @media screen and (max-width: 767px) {
-  //   .navigation-list {
-  //     list-style: none;
-  //   }
-  // }
+
+  .about-nav-item.active {
+    background-color: var(--bg-clr-reverse);
+    color: var(--font-clr-reverse);
+  }
+  .about-nav-item.active a {
+    color: var(--font-clr-reverse);
+    text-decoration: underline;
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 0 20px;
+
+  div {
+    padding: 25px;
+    border-radius: 25px;
+    a {
+      color: var(--external-link-clr);
+    }
+  }
+  .subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--element-clr);
+    &::after {
+      content: " :";
+    }
+  }
+
+  > div:nth-child(odd) {
+    background-color: var(--bg-clr-reverse);
+    color: var(--font-clr-reverse);
+  }
+  > div:nth-child(even) {
+    background-color: var(--bg-clr);
+    color: var(--font-clr);
+  }
 }
