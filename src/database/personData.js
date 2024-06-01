@@ -1,3 +1,6 @@
+// Add your skills here,
+// level: Beginner, Intermediate, Advanced, Expert, Master,
+
 const personData = JSON.parse(`{
   "workExperience": [
     {
@@ -127,7 +130,7 @@ const personData = JSON.parse(`{
       "id": 1,
       "institution": "Winc Academy",
       "education": "Full Stack Web Development",
-      "bulletpoints": ["frontend", "backend", "databases", "React", "Node.js", "Express.js", "Prisma", "SQL", "HTML", "CSS", "SCSS", "JavaScript", "Python", "Git", "Github", "ORM"],
+      "bulletpoints": ["front-end", "back-end", "databases", "React", "Node.js", "Express.js", "Prisma", "SQL", "HTML", "CSS", "SCSS", "JavaScript", "Python", "Git", "Github", "ORM"],
       "level": "HBO",
       "degree": "certificate",
       "yearOfCertificate": "2023",
@@ -250,105 +253,128 @@ const personData = JSON.parse(`{
       "skill": "JavaScript",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-js"
+      "iconName": "fa-js",
+      "langDescription": "JavaScript is an front-end and back-end language. It is used to create interactive websites and web applications."
     },
     {
       "id": 2,
       "skill": "HTML",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-html5"
+      "iconName": "fa-html5",
+      "langDescription": "HTML is the standard markup language for documents designed to be displayed in a web browser."
     },
     {
       "id": 3,
       "skill": "CSS",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-css3-alt"
+      "iconName": "fa-css3-alt",
+      "langDescription": "CSS is a style sheet language used for describing the presentation of a document written in HTML."
     },
     {
       "id": 4,
       "skill": "SCSS",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-sass"
+      "iconName": "fa-sass",
+      "langDescription": "SCSS is a preprocessor scripting language that is interpreted or compiled into CSS."
     },
     {
       "id": 5,
       "skill": "React",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-react"
+      "iconName": "fa-react",
+      "langDescription": "React is a front-end library for building user interfaces or UI components."
     },
     {
       "id": 6,
       "skill": "React.js",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-react"
+      "iconName": "fa-react",
+      "langDescription": "React is a front-end library for building user interfaces or UI components."
     },
     {
       "id": 7,
       "skill": "Node.js",
       "level": "Beginner",
       "icontype": "fa-brands",
-      "iconName": "fa-node-js"
+      "iconName": "fa-node-js",
+      "langDescription": "Node.js is a back-end language. It is used to create server-side applications."
     },
     {
       "id": 8,
       "skill": "Express.js",
       "level": "Advanced",
       "icontype": "fa-solid",
-      "iconName": "fa-code"
+      "iconName": "fa-code",
+      "langDescription": "Express.js is a back-end framework for Node.js. It is used to create server-side applications."
     },
     {
       "id": 9,
       "skill": "Prisma",
       "level": "Beginner",
       "icontype": "fa-solid",
-      "iconName": "fa-code"
+      "iconName": "fa-code",
+      "langDescription": "Prisma is a database toolkit. It is used to create and manage databases."
     },
     {
       "id": 10,
       "skill": "SQL",
       "level": "Advanced",
       "icontype": "fa-solid",
-      "iconName": "fa-database"
+      "iconName": "fa-database",
+      "langDescription": "SQL is a standard language for storing, manipulating and retrieving data in databases."
     },
     {
       "id": 11,
       "skill": "MySQL",
       "level": "Advanced",
-      "icontype": "fa-brands",
-      "iconName": "fa-mysql"
+      "icontype": "fa-solid",
+      "iconName": "fa-database",
+      "langDescription": "MySQL is a relational database management system. It is used to store and manage data in databases."
     },
     {
       "id": 12,
       "skill": "Python",
       "level": "Beginner",
       "icontype": "fa-brands",
-      "iconName": "fa-python"
+      "iconName": "fa-python",
+      "langDescription": "Python is a back-end language. It is used to create server-side applications."
     },
     {
       "id": 13,
       "skill": "Git",
       "level": "Beginner",
-      "icontype": "fa-brands",
-      "iconName": "fa-git"
+      "icontype": "fa-solid",
+      "iconName": "fa-code-branch",
+      "langDescription": "Git is a distributed version control system for tracking changes in code. It supports collaboration, branch management, and efficient workflows, making it essential for software development."
     },
     {
       "id": 14,
       "skill": "Github",
       "level": "Advanced",
       "icontype": "fa-brands",
-      "iconName": "fa-github"
+      "iconName": "fa-github",
+      "langDescription": "GitHub is a web-based platform for hosting and collaborating on Git repositories. It provides tools for version control, issue tracking, and code review, enhancing project management and teamwork in software development."
     },
     {
       "id": 15,
       "skill": "Object-relational mapping (ORM)",
       "level": "Advanced",
       "icontype": "fa-solid",
-      "iconName": "fa-database"
+      "iconName": "fa-database",
+      "langDescription": "ORM (Object-Relational Mapping) is a programming technique that allows developers to interact with a database using an object-oriented paradigm. It simplifies database operations by mapping objects in code to database tables, reducing the need for complex SQL queries."
+    },
+    {
+      "id": 16,
+      "skill": "PHP",
+      "level": "Beginner",
+      "icontype": "fa-brands",
+      "iconName": "fa-php",
+      "langDescription": "PHP is a back-end language. It is used to create server-side applications."
     }
   ]
 }`);

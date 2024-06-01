@@ -11,7 +11,7 @@ $font-special: "stencilSTD";
 //color options based on 60%, 30%, 10%
 $color-white: rgba(255, 255, 255, 0.753);
 $color-black: rgba(0, 0, 0, 0.8);
-$color-green: rgba(0, 255, 0, 0.8);
+$color-green: rgb(0, 255, 0);
 $color-green-hard: rgb(0, 120, 0, 1);
 
 //header options, screen width = 100vw
@@ -25,6 +25,8 @@ $site-nav-width: calc(100% - #{$site-logo-width});
     --bg-clr-reverse: #{$color-black};
     --font-clr-reverse: #{$color-white};
     --element-clr: #{$color-green};
+    --element-clr2: #{$color-green};
+    --element-clr3: #{$color-black};
     --external-link-clr: #{$color-green-hard};
   }
 }
@@ -36,6 +38,8 @@ $site-nav-width: calc(100% - #{$site-logo-width});
     --bg-clr-reverse: #{$color-white};
     --font-clr-reverse: #{$color-black};
     --element-clr: #{$color-green};
+    --element-clr2: #{$color-black};
+    --element-clr3: #{$color-green};
     --external-link-clr: #{$color-green};
   }
 }

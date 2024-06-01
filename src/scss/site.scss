@@ -17,6 +17,10 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  line-height: 1.2;
+  //FIXME turn on when ready
+  // -webkit-user-select: none;
+  // user-select: none;
 }
 
 .header {
@@ -134,7 +138,7 @@ body {
       }
 
       &:hover {
-        color: var(--element-clr);
+        color: var(--element-clr2);
 
         &:after {
           height: 10em;
@@ -154,7 +158,7 @@ body {
   }
 
   .navigation-item.active > .navigation-link {
-    color: var(--element-clr);
+    color: var(--element-clr2);
 
     &:after {
       height: 10em;
@@ -224,6 +228,7 @@ body {
   align-items: center;
   gap: 25px;
   margin: 0 20px;
+  margin-bottom: 15px;
 
   div {
     padding: 25px;
@@ -249,4 +254,79 @@ body {
     background-color: var(--bg-clr);
     color: var(--font-clr);
   }
+}
+
+.education-container {
+  width: 50%;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .education-year {
+    padding: 10px 0;
+  }
+  .skill-tag {
+    line-height: 25px;
+    margin: 5px 10px;
+    padding: 0 10px;
+    border-radius: 25px;
+    background-color: var(--element-clr);
+  }
+
+  .education-degree {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+.education-container:nth-child(odd) h1 {
+  color: var(--element-clr);
+}
+.education-container:nth-child(odd) .skill-tag {
+  color: var(--font-clr);
+}
+
+.skill-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  // padding: 10px;
+  margin: 0;
+  width: 50%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .skill-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 1rem;
+    padding: 0;
+    margin: 5px;
+
+    > i {
+      font-size: 1rem;
+      // position: relative;
+      color: goldenrod !important;
+    }
+  }
+
+  i {
+    font-size: 6rem;
+    position: relative;
+  }
+}
+.skill-container:nth-child(odd) i {
+  color: var(--element-clr2);
+}
+.skill-container:nth-child(even) i {
+  color: var(--element-clr3);
 }

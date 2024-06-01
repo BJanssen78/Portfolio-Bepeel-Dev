@@ -11,20 +11,19 @@ export const WorkExperience = () => {
         .sort((a, b) => b.startYear - a.startYear)
         .map((item) => (
           <div key={item.id} className="education-container">
-            <h1>
-              {item.position}
-              <br />
+            <h1>{item.position}</h1>
+            <p className="education-year">
               From :{" "}
               <span className="education-year">
                 {item.startYear} {item.startMonth} -{" "}
                 {item.endYear ? item.endYear : "Present"}{" "}
                 {item.endMonth ? item.endMonth : ""}
               </span>{" "}
-            </h1>
-
+            </p>
+            <h2>responsibilities:</h2>
             {item.bulletpoints.map((point, index) => (
               <Tag key={index} className="skill-tag">
-                {point}
+                {point === "" ? `No responsibilities` : `${point}`}
               </Tag>
             ))}
           </div>

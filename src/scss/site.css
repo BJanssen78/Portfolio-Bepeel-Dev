@@ -8,7 +8,9 @@
     --bg-clr: rgba(255, 255, 255, 0.753);
     --bg-clr-reverse: rgba(0, 0, 0, 0.8);
     --font-clr-reverse: rgba(255, 255, 255, 0.753);
-    --element-clr: rgba(0, 255, 0, 0.8);
+    --element-clr: rgb(0, 255, 0);
+    --element-clr2: rgb(0, 255, 0);
+    --element-clr3: rgba(0, 0, 0, 0.8);
     --external-link-clr: rgb(0, 120, 0);
   }
 }
@@ -18,8 +20,10 @@
     --bg-clr: rgba(0, 0, 0, 0.8);
     --bg-clr-reverse: rgba(255, 255, 255, 0.753);
     --font-clr-reverse: rgba(0, 0, 0, 0.8);
-    --element-clr: rgba(0, 255, 0, 0.8);
-    --external-link-clr: rgba(0, 255, 0, 0.8);
+    --element-clr: rgb(0, 255, 0);
+    --element-clr2: rgba(0, 0, 0, 0.8);
+    --element-clr3: rgb(0, 255, 0);
+    --external-link-clr: rgb(0, 255, 0);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -38,6 +42,7 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  line-height: 1.2;
 }
 
 .header {
@@ -155,7 +160,7 @@ body {
   transition: height 550ms ease-in-out, background-color 550ms ease-in-out;
 }
 .site-navigation .navigation-list .navigation-link:hover {
-  color: var(--element-clr);
+  color: var(--element-clr2);
 }
 .site-navigation .navigation-list .navigation-link:hover:after {
   height: 10em;
@@ -172,7 +177,7 @@ body {
   }
 }
 .site-navigation .navigation-item.active > .navigation-link {
-  color: var(--element-clr);
+  color: var(--element-clr2);
 }
 .site-navigation .navigation-item.active > .navigation-link:after {
   height: 10em;
@@ -234,6 +239,7 @@ body {
   align-items: center;
   gap: 25px;
   margin: 0 20px;
+  margin-bottom: 15px;
 }
 .content-container div {
   padding: 25px;
@@ -257,4 +263,76 @@ body {
 .content-container > div:nth-child(even) {
   background-color: var(--bg-clr);
   color: var(--font-clr);
+}
+
+.education-container {
+  width: 50%;
+}
+.education-container h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.education-container h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.education-container .education-year {
+  padding: 10px 0;
+}
+.education-container .skill-tag {
+  line-height: 25px;
+  margin: 5px 10px;
+  padding: 0 10px;
+  border-radius: 25px;
+  background-color: var(--element-clr);
+}
+.education-container .education-degree {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.education-container:nth-child(odd) h1 {
+  color: var(--element-clr);
+}
+
+.education-container:nth-child(odd) .skill-tag {
+  color: var(--font-clr);
+}
+
+.skill-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  width: 50%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.skill-container .skill-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 1rem;
+  padding: 0;
+  margin: 5px;
+}
+.skill-container .skill-bar > i {
+  font-size: 1rem;
+  color: goldenrod !important;
+}
+.skill-container i {
+  font-size: 6rem;
+  position: relative;
+}
+
+.skill-container:nth-child(odd) i {
+  color: var(--element-clr2);
+}
+
+.skill-container:nth-child(even) i {
+  color: var(--element-clr3);
 }/*# sourceMappingURL=site.css.map */

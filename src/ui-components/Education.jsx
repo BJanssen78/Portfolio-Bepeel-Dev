@@ -11,16 +11,17 @@ export const Education = () => {
         .sort((a, b) => b.yearOfCertificate - a.yearOfCertificate)
         .map((item) => (
           <div key={item.id} className="education-container">
-            <h3>
-              {item.institution} - {item.education}
-              <span className="education-year">{item.yearOfCertificate}</span>
-            </h3>
-
+            <h1> {item.education}</h1>
+            <h2>Institution: {item.institution}</h2>
+            <p>Modules:</p>
             {item.bulletpoints.map((point, index) => (
               <Tag key={index} className="skill-tag">
                 {point}
               </Tag>
             ))}
+            <p className="education-degree">
+              {item.degree} at year : {item.yearOfCertificate}
+            </p>
           </div>
         ))}
     </React.Fragment>
