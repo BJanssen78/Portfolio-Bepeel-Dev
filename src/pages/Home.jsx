@@ -1,7 +1,5 @@
 import React from "react";
 
-// import Button from "../ui-components/Button.jsx";
-
 export const Home = () => {
   return (
     <React.Fragment>
@@ -61,7 +59,6 @@ export const Home = () => {
             dignissimos quam, in, earum pariatur? Cupiditate magni sit numquam.
           </p>
         </div>
-        {/* <Button type="reset" name="button" text="Click me" action="form" /> */}
       </div>
     </React.Fragment>
   );

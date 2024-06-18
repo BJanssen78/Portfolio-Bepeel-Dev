@@ -20,21 +20,10 @@ const personData = JSON.parse(`{
     "position": "Looking for a job",
     "startYear": "2021",
     "endYear": "2022",
-    "startMonth": "nov",
+    "startMonth": "okt",
     "endMonth": "feb",
     "bulletpoints": ["Jobhunting"],
     "comments": ""
-    },
-    {
-      "id": 3,
-      "companyName": "Bakkerij Bouwman",
-      "position": "Teamleader production (flex)",
-      "startYear": "2021",
-      "endYear": "2021",
-      "startMonth": "nov",
-      "endMonth": "nov",
-      "bulletpoints": ["Production",  "Personel Planning", "Process optimization"],
-      "comments": "Temporary assignment, no match"
     },
     {
       "id": 4,

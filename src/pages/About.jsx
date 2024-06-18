@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Skills,
-  Education,
-  WorkExperience,
-  DownloadResume,
-} from "../ui-components/UiIndex.js";
+import { Skills, Education, WorkExperience } from "../ui-components/UiIndex.js";
 import { Storyline } from "./pagesIndex.js";
 
 export const About = () => {
@@ -45,12 +40,6 @@ export const About = () => {
             >
               <a href="#about-skills">Skills</a>
             </li>
-            <li
-              className={`about-nav-item ${activeTab === "download" ? "active" : ""}`}
-              onClick={() => handleTabClick("download")}
-            >
-              <a href="#about-download">Download Resume</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -59,7 +48,6 @@ export const About = () => {
         {activeTab === "experience" && <WorkExperience />}
         {activeTab === "skills" && <Skills />}
         {activeTab === "education" && <Education />}
-        {activeTab === "download" && <DownloadResume />}
       </div>
     </React.Fragment>
   );
