@@ -4,6 +4,9 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
+    --btn-color: rgb(0, 255, 0);
+    --btn-bg-color: rgba(255, 255, 255, 0.753);
+    --btn-shadow-color: rgba(0, 0, 0, 0.8);
     --font-clr: rgba(0, 0, 0, 0.8);
     --bg-clr: rgba(255, 255, 255, 0.753);
     --bg-clr-reverse: rgba(0, 0, 0, 0.8);
@@ -16,6 +19,9 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
+    --btn-color: rgb(0, 255, 0);
+    --btn-bg-color: rgba(0, 0, 0, 0.8);
+    --btn-shadow-color: rgba(255, 255, 255, 0.753);
     --font-clr: rgba(255, 255, 255, 0.753);
     --bg-clr: rgba(0, 0, 0, 0.8);
     --bg-clr-reverse: rgba(255, 255, 255, 0.753);
@@ -436,5 +442,82 @@ body {
     align-items: center;
     gap: 15px;
     width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: start;
+    gap: 15px;
+    margin: 10px auto;
+    width: 90%;
+    font-size: 1.2em;
+  }
+  .contact-container label {
+    width: 100%;
+  }
+  .contact-container .contact-form-title {
+    grid-column: 1/-1;
+    justify-self: flex-start;
+  }
+  .contact-container section > h2 {
+    font-weight: bold;
+  }
+  .contact-container section > input,
+  .contact-container select,
+  .contact-container textarea,
+  .contact-container option {
+    font-size: 0.8em;
+    padding: 5px;
+  }
+  .contact-form {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+    margin: 10px;
+    width: 90%;
+    overflow: auto;
+    max-height: 100vh;
+  }
+  .contact-form label,
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+  .contact-form section {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+  .contact-form .submit-btn {
+    height: 4vh;
+    width: 100%;
+    font-size: 1.1em;
+    font-family: "stencilSTD";
+    color: rgb(0, 255, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .contact-form .submit-btn {
+    height: 4vh;
+    width: 100%;
+    font-size: 1.1em;
+    font-family: "stencilSTD";
+    color: var(--btn-color);
+    background-color: var(--btn-bg-color);
+    border: none;
+    box-shadow: inset 0px 0px 7px 3px var(--btn-shadow-color);
+  }
+  .context-information {
+    position: sticky;
+    top: 0;
+    justify-content: flex-start;
   }
 }/*# sourceMappingURL=site.css.map */

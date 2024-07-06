@@ -20,6 +20,9 @@ $site-nav-width: calc(100% - #{$site-logo-width});
 
 @media (prefers-color-scheme: light) {
   :root {
+    --btn-color: #{$color-green};
+    --btn-bg-color: #{$color-white};
+    --btn-shadow-color: #{$color-black};
     --font-clr: #{$color-black};
     --bg-clr: #{$color-white};
     --bg-clr-reverse: #{$color-black};
@@ -33,6 +36,9 @@ $site-nav-width: calc(100% - #{$site-logo-width});
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --btn-color: #{$color-green};
+    --btn-bg-color: #{$color-black};
+    --btn-shadow-color: #{$color-white};
     --font-clr: #{$color-white};
     --bg-clr: #{$color-black};
     --bg-clr-reverse: #{$color-white};

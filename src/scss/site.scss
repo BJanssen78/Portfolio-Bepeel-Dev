@@ -390,6 +390,7 @@ body {
   color: var(--element-clr3);
 }
 
+//FIXME: Add media queries for different screen sizes
 @media screen and (max-width: 575.99px) {
   .contact-container {
     display: grid;
@@ -429,5 +430,90 @@ body {
       gap: 15px;
       width: 100%;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: start;
+    gap: 15px;
+    margin: 10px auto;
+    width: 90%;
+    font-size: 1.2em;
+
+    label {
+      width: 100%;
+    }
+
+    .contact-form-title {
+      grid-column: 1 / -1;
+      justify-self: flex-start;
+    }
+
+    section > h2 {
+      font-weight: bold;
+    }
+    section > input,
+    select,
+    textarea,
+    option {
+      font-size: 0.8em;
+      padding: 5px;
+    }
+  }
+  .contact-form {
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: left;
+    align-items: center;
+    gap: 15px;
+    margin: 10px;
+    width: 90%;
+    overflow: auto;
+    max-height: 100vh;
+    // min-height: 4096px;
+
+    label,
+    input,
+    textarea {
+      width: 100%;
+    }
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: left;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+    }
+    .submit-btn {
+      height: 4vh;
+      width: 100%;
+      font-size: 1.1em;
+      font-family: $font-special;
+      color: $color-green;
+      background-color: $color-black;
+    }
+    .submit-btn {
+      height: 4vh;
+      width: 100%;
+      font-size: 1.1em;
+      font-family: $font-special;
+      color: var(--btn-color);
+      background-color: var(--btn-bg-color);
+      border: none;
+      box-shadow: inset 0px 0px 7px 3px var(--btn-shadow-color);
+    }
+  }
+
+  .context-information {
+    position: sticky;
+    top: 0;
+    justify-content: flex-start;
   }
 }
