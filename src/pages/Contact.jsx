@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { existingProjectEng } from "../pages/descriptions/descriptionIndex.js";
+import {
+  existingProjectEng,
+  timelineEng,
+} from "../pages/descriptions/descriptionIndex.js";
 
 export const Contact = () => {
   const [contactInfo, setContactInfo] = useState({
@@ -19,7 +22,13 @@ export const Contact = () => {
     budget: "",
   });
 
+  const [descriptionOnFocus, setDescriptionOnFocus] = useState("");
   const [errors, setErrors] = useState({});
+
+  const handleFocus = (e) => {
+    setDescriptionOnFocus(e.target.name);
+    console.log(descriptionOnFocus);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,8 +73,20 @@ export const Contact = () => {
       setErrors(validationErrors);
     } else {
       setErrors({});
+      //FIXME : send data to API
       // Handle form submission, e.g., send the data to an API or display it
       console.log(contactInfo);
+    }
+  };
+
+  const getDescriptionContent = () => {
+    switch (descriptionOnFocus) {
+      case "timeline":
+        return timelineEng();
+      case "existingProject":
+        return existingProjectEng();
+      default:
+        return null;
     }
   };
 
@@ -169,8 +190,9 @@ export const Contact = () => {
 
             <div>
               <label>Existing Project? :</label>
-              <div>
+              <div className="radio-input">
                 {/* //FIXME: css style */}
+                <label htmlFor="project1">Yes</label>
                 <input
                   type="radio"
                   id="project1"
@@ -178,8 +200,10 @@ export const Contact = () => {
                   value="yes"
                   checked={contactInfo.newProject === "yes"}
                   onChange={handleChange}
+                  onFocus={handleFocus}
                 />
-                <label htmlFor="project1">Yes</label>
+
+                <label htmlFor="project2">No</label>
                 <input
                   type="radio"
                   id="project2"
@@ -189,7 +213,7 @@ export const Contact = () => {
                   onChange={handleChange}
                 />
               </div>
-              <label htmlFor="project2">No</label>
+
               {errors.newProject && (
                 <div style={{ color: "red" }}>{errors.newProject}</div>
               )}
@@ -272,6 +296,7 @@ export const Contact = () => {
               name="timeline"
               value={contactInfo.timeline}
               onChange={handleChange}
+              onFocus={handleFocus}
             >
               <option value="">Select an option</option>
               <option value="1-month">1 month</option>
@@ -317,7 +342,9 @@ export const Contact = () => {
             Submit
           </button>
         </form>
-        <div id="context-information">{existingProjectEng()}</div>
+        <div id="context-information" className="context-information">
+          {getDescriptionContent()}
+        </div>
       </div>
     </React.Fragment>
   );
