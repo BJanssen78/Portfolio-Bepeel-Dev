@@ -481,7 +481,10 @@ body {
     label,
     input,
     textarea {
-      width: 100%;
+      width: 90%;
+    }
+    textarea {
+      height: 10vh;
     }
 
     .radio-input {
@@ -501,18 +504,11 @@ body {
       gap: 15px;
       width: 100%;
     }
+
     .submit-btn {
       height: 4vh;
       width: 100%;
-      font-size: 1.1em;
-      font-family: $font-special;
-      color: $color-green;
-      background-color: $color-black;
-    }
-    .submit-btn {
-      height: 4vh;
-      width: 100%;
-      font-size: 1.1em;
+      font-size: 1.1rem;
       font-family: $font-special;
       color: var(--btn-color);
       background-color: var(--btn-bg-color);
@@ -526,5 +522,16 @@ body {
     top: 0;
     max-width: 80%;
     justify-self: flex-start;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 10px;
+    width: 90%;
+    font-size: 1.2em;
   }
 }

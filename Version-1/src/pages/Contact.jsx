@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  existingProjectEng,
-  timelineEng,
-} from "../pages/descriptions/descriptionIndex.js";
+import { Descriptions } from "./descriptions/descriptions.jsx";
 
 export const Contact = () => {
   const [contactInfo, setContactInfo] = useState({
@@ -27,7 +24,6 @@ export const Contact = () => {
 
   const handleFocus = (e) => {
     setDescriptionOnFocus(e.target.name);
-    console.log(descriptionOnFocus);
   };
 
   const handleChange = (e) => {
@@ -46,8 +42,8 @@ export const Contact = () => {
     if (!contactInfo.bestTime) newErrors.bestTime = "Best Time is required";
     if (!contactInfo.projectName)
       newErrors.projectName = "Project Name is required";
-    if (!contactInfo.newProject)
-      newErrors.newProject = "Existing Project is required";
+    if (!contactInfo.existingProject)
+      newErrors.existingProject = "Existing Project is required";
     if (!contactInfo.typeOfProject)
       newErrors.typeOfProject = "Type of Project is required";
     if (!contactInfo.projectDescription)
@@ -73,20 +69,8 @@ export const Contact = () => {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      //FIXME : send data to API
-      // Handle form submission, e.g., send the data to an API or display it
+      // FIXME: send data to API
       console.log(contactInfo);
-    }
-  };
-
-  const getDescriptionContent = () => {
-    switch (descriptionOnFocus) {
-      case "timeline":
-        return timelineEng();
-      case "existingProject":
-        return existingProjectEng();
-      default:
-        return null;
     }
   };
 
@@ -108,6 +92,7 @@ export const Contact = () => {
               name="name"
               placeholder="your name"
               onChange={handleChange}
+              onFocus={handleFocus}
             />
             {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
             <label htmlFor="email">Email:</label>
@@ -117,6 +102,7 @@ export const Contact = () => {
               name="email"
               placeholder="your email"
               onChange={handleChange}
+              onFocus={handleFocus}
             />
             {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
 
@@ -127,6 +113,7 @@ export const Contact = () => {
               name="phone"
               placeholder="your phone number"
               onChange={handleChange}
+              onFocus={handleFocus}
             />
             {errors.phone && <div style={{ color: "red" }}>{errors.phone}</div>}
 
@@ -137,6 +124,7 @@ export const Contact = () => {
               name="company"
               placeholder="your company"
               onChange={handleChange}
+              onFocus={handleFocus}
             />
             {errors.company && (
               <div style={{ color: "red" }}>{errors.company}</div>
@@ -148,6 +136,7 @@ export const Contact = () => {
               name="preferredContact"
               value={contactInfo.preferredContact}
               onChange={handleChange}
+              onFocus={handleFocus}
             >
               <option value="">Select an option</option>
               <option value="email">Email</option>
@@ -163,6 +152,7 @@ export const Contact = () => {
               name="bestTime"
               value={contactInfo.bestTime}
               onChange={handleChange}
+              onFocus={handleFocus}
             >
               <option value="">Select an option</option>
               <option value="morning">Morning 09:00 - 12:00</option>
@@ -183,6 +173,7 @@ export const Contact = () => {
               name="projectName"
               placeholder="project name"
               onChange={handleChange}
+              onFocus={handleFocus}
             />
             {errors.projectName && (
               <div style={{ color: "red" }}>{errors.projectName}</div>
@@ -191,14 +182,13 @@ export const Contact = () => {
             <div>
               <label>Existing Project? :</label>
               <div className="radio-input">
-                {/* //FIXME: css style */}
                 <label htmlFor="project1">Yes</label>
                 <input
                   type="radio"
                   id="project1"
                   name="existingProject"
                   value="yes"
-                  checked={contactInfo.newProject === "yes"}
+                  checked={contactInfo.existingProject === "yes"}
                   onChange={handleChange}
                   onFocus={handleFocus}
                 />
@@ -209,13 +199,13 @@ export const Contact = () => {
                   id="project2"
                   name="existingProject"
                   value="no"
-                  checked={contactInfo.newProject === "no"}
+                  checked={contactInfo.existingProject === "no"}
                   onChange={handleChange}
+                  onFocus={handleFocus}
                 />
               </div>
-
-              {errors.newProject && (
-                <div style={{ color: "red" }}>{errors.newProject}</div>
+              {errors.existingProject && (
+                <div style={{ color: "red" }}>{errors.existingProject}</div>
               )}
             </div>
             <label htmlFor="type-of-project">Type of Project:</label>
@@ -224,6 +214,7 @@ export const Contact = () => {
               name="typeOfProject"
               value={contactInfo.typeOfProject}
               onChange={handleChange}
+              onFocus={handleFocus}
             >
               <option value="">Select an option</option>
               <option value="Static-Website">Static Website</option>
@@ -241,6 +232,7 @@ export const Contact = () => {
               placeholder="project description"
               value={contactInfo.projectDescription}
               onChange={handleChange}
+              onFocus={handleFocus}
             ></textarea>
             {errors.projectDescription && (
               <div style={{ color: "red" }}>{errors.projectDescription}</div>
@@ -252,6 +244,7 @@ export const Contact = () => {
               name="typeOfService"
               value={contactInfo.typeOfService}
               onChange={handleChange}
+              onFocus={handleFocus}
             >
               <option value="">Select an option</option>
               <option value="web-development">Web Development</option>
@@ -278,6 +271,7 @@ export const Contact = () => {
                   name="otherTypeOfService"
                   onChange={handleChange}
                   value={contactInfo.otherTypeOfService}
+                  onFocus={handleFocus}
                 ></textarea>
                 {errors.otherTypeOfService && (
                   <div style={{ color: "red" }}>
@@ -323,6 +317,7 @@ export const Contact = () => {
               name="budget"
               value={contactInfo.budget}
               onChange={handleChange}
+              onFocus={handleFocus}
             >
               <option value="">Select an option</option>
               <option value="less-than-1000">Less than €1000</option>
@@ -338,12 +333,17 @@ export const Contact = () => {
             )}
           </section>
 
-          <button type="submit" className="submit-btn">
-            Submit
-          </button>
+          <div className="btn-container">
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
+            <button type="reset" className="submit-btn">
+              Reset
+            </button>
+          </div>
         </form>
         <div id="context-information" className="context-information">
-          {getDescriptionContent()}
+          <Descriptions description={descriptionOnFocus} />
         </div>
       </div>
     </React.Fragment>
