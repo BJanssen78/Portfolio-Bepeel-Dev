@@ -62,15 +62,37 @@ export const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
       setErrors({});
-      // FIXME: send data to API
-      console.log(contactInfo);
+
+      // Prepare the data to be sent to the PHP script
+      const formData = new FormData();
+      Object.keys(contactInfo).forEach((key) => {
+        formData.append(key, contactInfo[key]);
+      });
+
+      try {
+        // Send the data to the PHP script
+        const response = await fetch("sendContactMail.php", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const result = await response.text();
+          alert(result); // or handle the response as needed
+        } else {
+          alert("There was a problem with the request.");
+        }
+      } catch (error) {
+        console.error("Error submitting the form:", error);
+        alert("There was an error submitting the form.");
+      }
     }
   };
 
