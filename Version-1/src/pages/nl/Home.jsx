@@ -1,10 +1,11 @@
 import React from "react";
 
-export const Home = () => {
+export const NlHome = () => {
   return (
     <React.Fragment>
       <div className="content-container">
         <div>
+          <h1>NL directorie</h1>
           <p className="content-text-1">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ipsa
             adipisci quaerat consequuntur nostrum deserunt atque voluptas
@@ -63,4 +64,4 @@ export const Home = () => {
     </React.Fragment>
   );
 };
-export default Home;
+export default NlHome;

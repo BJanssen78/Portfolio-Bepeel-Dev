@@ -1,0 +1,36 @@
+let's start over, to make a clean project.
+
+I want a python script to execute from within the terminal.
+Correct me if i am wrong, but the command would look like this;
+python newProject.py
+
+1. it should ask me for a project name.
+2. it should ask me for a project number.
+ - check the validaty of the project number
+ - must start with 3 letters
+ - convert letters to capital
+ - add 1 space between the letters and the numbers, if not there.
+ - syntax will be "NNN yyyymmddHHmmss", where yyyymmddHHmmss must be all numbers
+ - NNN must be a letter combination according this list, "API, MAP, MAI, AUT, DBD, CMS, WEB, BED, FSD, OTH"
+
+3. it should ask if backend is required.
+4. it should ask if front-end is required.
+
+5. create map structure, like this.
+- if the map "projectnumber - projectname" exist, then check which Version is there, then create inside a Version-02 etc.
+- if version 2 already exist, incremend it's number
+
+bussines root
+- newProject.py
+- template
+- projectnumber - projectname
+|- Version-01
+|-- .gitignore
+|-- package.json (workspace file)
+|-- node_modules
+|--backend
+|--- package.json (can be copied from the template\backend folder)
+|--frontend
+|--- package.json (can be copied from the template\frontend folder)
+
+6. execute all installs, if backend is false no need for install, same works for frontend.

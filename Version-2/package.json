@@ -1,0 +1,8 @@
+{
+  "name": "bpe-web-dev-portfolio",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
