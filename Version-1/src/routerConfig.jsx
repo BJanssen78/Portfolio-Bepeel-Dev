@@ -6,6 +6,9 @@ import {
   EnHome,
   Projects,
   Contact,
+  EnAbout,
+  EnContact,
+  EnProjects,
 } from "./pages/pagesIndex.js";
 
 const getDefaultLang = () => {
@@ -18,7 +21,7 @@ export const router = createBrowserRouter([
     path: "/",
     element: <App />,
     loader: ({ request }) => {
-      const currentPath = new URL(request.url).pathname; // Get current path
+      const currentPath = new URL(request.url).pathname;
       const lang = getDefaultLang();
 
       // Only redirect if the user is not already on a language route
@@ -32,21 +35,18 @@ export const router = createBrowserRouter([
       {
         path: "nl/",
         element: <NlHome />,
-        children: [
-          { path: "about", element: <About /> },
-          { path: "projects", element: <Projects /> },
-          { path: "contact", element: <Contact /> },
-        ],
       },
       {
         path: "en/",
         element: <EnHome />,
-        children: [
-          { path: "about", element: <About /> },
-          { path: "projects", element: <Projects /> },
-          { path: "contact", element: <Contact /> },
-        ],
       },
+      // Place individual paths here directly under each language:
+      { path: "nl/about", element: <About /> },
+      { path: "nl/projects", element: <Projects /> },
+      { path: "nl/contact", element: <Contact /> },
+      { path: "en/about", element: <EnAbout /> },
+      { path: "en/projects", element: <EnProjects /> },
+      { path: "en/contact", element: <EnContact /> },
     ],
   },
 ]);

@@ -1,28 +1,6 @@
-@import "variables.scss";
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-body {
-  background-color: var(--bg-clr);
-  color: var(--font-clr);
-  font-family: $font-standard;
-  font-size: $font-size;
-  width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  line-height: 1.2;
-  //FIXME turn on when ready
-  // -webkit-user-select: none;
-  // user-select: none;
-}
+@import "reset.scss";
+@import "global-settings.scss";
+@import "site-logo.scss";
 
 .header {
   //base information for header
@@ -35,28 +13,10 @@ body {
 }
 
 .site-logo {
-  //base information site logo
-  display: flex;
-  flex-wrap: nowrap;
-  font-family: $font-special;
-  font-weight: 900;
-  text-transform: uppercase;
-  margin: 10px;
-
-  h1:nth-child(2) {
-    color: var(--element-clr);
-  }
-  .special-char {
-    color: var(--element-clr);
-  }
+  @include site-logo;
 
   //induvidual options for each screen size
-  @media screen and (max-width: 767.9px) {
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 10px 0;
-    gap: 10px;
-  }
+
   @media screen and (max-width: 320px) {
     font-size: 2rem;
   }
@@ -68,22 +28,6 @@ body {
   }
   @media screen and (min-width: 576px) and (max-width: 767.9px) {
     font-size: 3.5rem;
-  }
-
-  @media screen and (min-width: 768px) {
-    flex-direction: column;
-    font-size: 4rem;
-    align-items: flex-start;
-    width: 34vw;
-    max-width: 255px;
-    margin: 10px;
-    h1:nth-child(odd) {
-      align-self: flex-start;
-    }
-
-    h1:nth-child(2) {
-      align-self: flex-end;
-    }
   }
 }
 

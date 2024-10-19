@@ -1,6 +1,188 @@
+/* Optimized Reset CSS */
+/* Remove default margins, padding, and borders */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+main,
+template,
+svg {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Set default line-height */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* Better font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Better font rendering */
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+/* Remove default list styles */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Remove default blockquote and q quotes */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+}
+
+/* Set consistent table layout */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Add box-sizing reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set input and button to inherit fonts */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Ensure images and videos scale properly */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Touch optimizations for mobile devices */
+body {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 @font-face {
   font-family: "stencilSTD";
   src: url("./fonts/StencilStd.otf");
+}
+:root {
+  --font-base-size: 16px;
 }
 @media (prefers-color-scheme: light) {
   :root {
@@ -32,24 +214,14 @@
     --external-link-clr: rgb(0, 255, 0);
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
-}
+
 body {
-  background-color: var(--bg-clr);
-  color: var(--font-clr);
   font-family: "calibri";
-  font-size: 20px;
-  width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  line-height: 1.2;
+  font-size: var(--font-base-size);
+  color: var(--font-clr);
+  background-color: var(--bg-clr);
+  min-height: 100vh;
+  width: calc(100vw - scrollbar-width());
 }
 
 .header {
@@ -64,11 +236,11 @@ body {
 
 .site-logo {
   display: flex;
-  flex-wrap: nowrap;
   font-family: "stencilSTD";
-  font-weight: 900;
+  flex-wrap: nowrap;
   text-transform: uppercase;
   margin: 10px;
+  line-height: 1.1;
 }
 .site-logo h1:nth-child(2) {
   color: var(--element-clr);
@@ -78,10 +250,25 @@ body {
 }
 @media screen and (max-width: 767.9px) {
   .site-logo {
-    flex-direction: row;
+    font-size: 1.5rem;
+    max-width: 100vw;
+    width: 100vw;
     justify-content: space-evenly;
-    margin: 10px 0;
-    gap: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .site-logo {
+    flex-direction: column;
+    font-size: 2rem;
+    align-items: flex-start;
+    max-width: 140px;
+    width: 34vw;
+  }
+  .site-logo h1:nth-child(odd) {
+    align-self: flex-start;
+  }
+  .site-logo h1:nth-child(2) {
+    align-self: flex-end;
   }
 }
 @media screen and (max-width: 320px) {
@@ -102,22 +289,6 @@ body {
 @media screen and (min-width: 576px) and (max-width: 767.9px) {
   .site-logo {
     font-size: 3.5rem;
-  }
-}
-@media screen and (min-width: 768px) {
-  .site-logo {
-    flex-direction: column;
-    font-size: 4rem;
-    align-items: flex-start;
-    width: 34vw;
-    max-width: 255px;
-    margin: 10px;
-  }
-  .site-logo h1:nth-child(odd) {
-    align-self: flex-start;
-  }
-  .site-logo h1:nth-child(2) {
-    align-self: flex-end;
   }
 }
 

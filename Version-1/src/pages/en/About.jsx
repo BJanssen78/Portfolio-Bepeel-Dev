@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Skills, Education, WorkExperience } from "../ui-components/UiIndex.js";
-import { Storyline } from "./pagesIndex.js";
+import {
+  Skills,
+  Education,
+  WorkExperience,
+} from "../../ui-components/UiIndex.js";
+import { Storyline } from "../pagesIndex.js";
 
-export const About = () => {
+export const EnAbout = () => {
   // State to track the active tab
   const [activeTab, setActiveTab] = useState("storyline");
 
@@ -53,4 +57,4 @@ export const About = () => {
   );
 };
 
-export default About;
+export default EnAbout;

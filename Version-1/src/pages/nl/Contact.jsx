@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Descriptions } from "./descriptions/descriptions.jsx";
+import { Descriptions } from "../descriptions/descriptions.jsx";
 
 export const Contact = () => {
   const [contactInfo, setContactInfo] = useState({
@@ -78,7 +78,7 @@ export const Contact = () => {
 
       try {
         // Send the data to the PHP script
-        const response = await fetch("sendContactMail.php", {
+        const response = await fetch("../../functions/sendContactMail.php", {
           method: "POST",
           body: formData,
         });

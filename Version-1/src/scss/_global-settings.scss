@@ -1,0 +1,63 @@
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@font-face {
+  font-family: "stencilSTD";
+  src: url("./fonts/StencilStd.otf");
+}
+
+//font options
+$font-standard: "calibri";
+$font-special: "stencilSTD";
+
+//color options based on 60%, 30%, 10%
+$color-white: rgba(255, 255, 255, 0.753);
+$color-black: rgba(0, 0, 0, 0.8);
+$color-green: rgba(0, 255, 0, 1);
+$color-green-hard: rgba(0, 120, 0, 1);
+
+:root {
+  --font-base-size: 16px;
+
+  @media (prefers-color-scheme: light) {
+    --btn-color: #{$color-green};
+    --btn-bg-color: #{$color-white};
+    --btn-shadow-color: #{$color-black};
+    --font-clr: #{$color-black};
+    --bg-clr: #{$color-white};
+    --bg-clr-reverse: #{$color-black};
+    --font-clr-reverse: #{$color-white};
+    --element-clr: #{$color-green};
+    --element-clr2: #{$color-green};
+    --element-clr3: #{$color-black};
+    --external-link-clr: #{$color-green-hard};
+  }
+  @media (prefers-color-scheme: dark) {
+    --btn-color: #{$color-green};
+    --btn-bg-color: #{$color-black};
+    --btn-shadow-color: #{$color-white};
+    --font-clr: #{$color-white};
+    --bg-clr: #{$color-black};
+    --bg-clr-reverse: #{$color-white};
+    --font-clr-reverse: #{$color-black};
+    --element-clr: #{$color-green};
+    --element-clr2: #{$color-black};
+    --element-clr3: #{$color-green};
+    --external-link-clr: #{$color-green};
+  }
+}
+body {
+  font-family: $font-standard;
+  font-size: var(--font-base-size);
+  color: var(--font-clr);
+  background-color: var(--bg-clr);
+  min-height: 100vh;
+  width: calc(100vw - scrollbar-width());
+  //FIXME turn on when ready
+  // -webkit-user-select: none;
+  // user-select: none;
+}
