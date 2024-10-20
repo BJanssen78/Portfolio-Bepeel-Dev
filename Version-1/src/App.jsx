@@ -5,9 +5,10 @@ function App() {
   return (
     <>
       <div className="header">
-        <div className="language-switch">
-          <LangSwitch />
-        </div>
+        {/* //FIXME check if this is needed */}
+        {/* <div className="language-switch"> */}
+        <LangSwitch />
+        {/* </div> */}
         <SiteLogo />
         <Navigation />
       </div>

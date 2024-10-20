@@ -360,7 +360,7 @@ body {
   .site-navigation .navigation-list {
     height: 100%;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .site-navigation .navigation-list .navigation-item {
     box-sizing: border-box;
@@ -715,5 +715,5 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1.2em;
+  max-height: 25px;
 }/*# sourceMappingURL=site.css.map */

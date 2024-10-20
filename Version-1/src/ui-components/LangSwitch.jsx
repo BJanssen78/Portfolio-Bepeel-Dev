@@ -22,7 +22,7 @@ const LangSwitch = () => {
   });
 
   return (
-    <div>
+    <div className="language-switch">
       <a
         onMouseEnter={() => setHoveredFlag("nl")}
         onMouseLeave={() => setHoveredFlag(null)}
